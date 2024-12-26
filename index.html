@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"2d Themed shooter game</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="about">
+        <h1>Welcome to themed shooter game</h1>
+        <p>Pick your theme and fight the enemies</p>
+        <p>Use WASD or arrow keys to move, Space to shoot, R to restart when you lose, H to return to homepage.<br>Make sure you don't lose to those tricky enemies</p>
+        <h3>Good luck!</h3>
+    </div>
+    <div class="themes">
+        <button class="button" data-theme="default">Default</button>
+        <button class="button" data-theme="halloween">Halloween</button>
+        <button class="button" data-theme="winter">Winter</button>
+        <button class="button" data-theme="space">Space</button>
+    </div>
+
+    <canvas id="playArea"></canvas>
+
+    <script>
+        const theme = {
+            default: {
+                player: 'assets/default/player.png',
+                enemy: 'assets/default/enemy.png',
+                background: 'assets/default/background.png'
+            },
+            halloween: {
+                player: 'assets/halloween/pumpkin.png',
+                enemy: 'assets/halloween/spider.png',
+                background: 'assets/halloween/halloween-background.png'
+            },
+            winter: {
+                player: 'assets/winter/santa.png',
+                enemy: 'assets/winter/grinch.png',
+                background: 'assets/winter/winter-background.png'
+            },
+            space: {
+                player: 'assets/space/spaceship.png',
+                enemy: 'assets/space/alien.png',
+                background: 'assets/space/space-background.png'
+            }
+        };
+
+        document.querySelectorAll('.button').forEach(button => {
+            button.addEventListener('click', () => {
+                const theme = button.dataset.theme;
+                localStorage.setItem('gameTheme', theme);
+                localStorage.setItem('theme', JSON.stringify(theme[theme]));
+                window.location.href = 'game.html';
+            });
+        });
+    </script>
+    <script src="game.js"></script>
+</body>
+</html>

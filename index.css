@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-image: url('assets/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.about {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 30px;
+    width: 60%;
+    max-width: 500px;
+    backdrop-filter: blur(16px), saturate(160%); 
+}
+
+.about h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+
+.themes {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    gap: 15px;
+}
+
+.button {
+    background: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(10px); 
+    padding: 15px;
+    width: 200px;
+    border-color: dimgray;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgb(129, 21, 21);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.button:focus {
+    outline: none;
+}
+
